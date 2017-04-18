@@ -1,0 +1,98 @@
+
+body {
+	font-family: Lato, Arial, sans-serif;
+	margin: 0
+	padding: 20px;
+
+}
+
+
+section {
+	width: 600px;
+	margin: auto;
+	margin-top: 80px;
+}
+
+
+h1 {
+ 	margin-left: 25px;
+    text-align:center;
+    font-size: 500%;
+
+
+ }
+
+p {
+	line-height: 1.5;
+	margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 300px;
+    margin-left: 300px;
+}
+
+a{
+	text-decoration: none;
+    color: #168dd9;
+    cursor: pointer;
+}
+a:hover {
+	text-decoration: underline; 
+}
+img { height: 350px;
+    width: 50%;
+    margin-left: 275px;
+    opacity: 0.5;
+
+}
+#slider-range-max{
+    margin: 10px;
+    margin-left: 200px;
+}
+.ui-slider-horizontal {
+    height: 8px;
+    width: 800px;
+}
+.ui-slider .ui-slider-handle {
+    height: 15px;
+    width: 5px;
+    padding-left: 5px;
+}
+  
+<style>
+body {
+background-color: lightblue;
+font-family: Helvetica;
+}
+
+#placeholder {
+    width: 850px;
+    height: 500px;
+    margin-left: 175px;
+}
+
+
+#main {
+width: 80%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: blanchedalmond;
+border-radius: 10px;
+text-align: center;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+background: beige;
+background-image: url("market.png");
+color: black;
+}
+
+
+
+</style>
+
