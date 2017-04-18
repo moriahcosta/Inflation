@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang = "en">
+   <head>
+      <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+      <meta charset = "utf-8">
+      <title>Inflation</title>
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"></script>
+      <script src="CPIdata.js"></script>
+      <script src="script.js"></script>
+      <script src="bread.js"></script>
+    
+      </head>
+          <body>
+          <style>
+          .parallax { 
+           
+              background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Supermarket_full_of_goods.jpg/1024px-Supermarket_full_of_goods.jpg");
+              height: 500px; 
+              background-attachment: fixed;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+          }
+          </style>
+          <div class="parallax"></div>
+      <h1> The Inflation is Just Right</h1>
+          <p> There are a lot of factors that determine the price of a loaf of bread, orange juice, or chocolate bar. One of those factors is inflation, or the amount of goods you can buy with a predetermined amount of currency. When prices rise, it is called inflation. When the opposite happens, it's called deflation. For most economies some level of inflation is good- the Bank of England for example has a yearly goal of 2 per cent inflation per year. But how exactly does this rather confusing economic term work and how does it make your grocery price go up? </p>
+         <p> To understand that, we first need to understand what money is and how it works. Money is a value of exchange or something we use to determine what something is worth. Inflation happens when the money or value is not worth as much, hence the reason why prices increase. </p>
+         <p> One factor that governments use to determine inflation is tracking prices of a set number of goods that the average household buys, called the Basket of Goods. But this is where it gets a little tricky. Just because a price of a good goes up does not always mean it is because of inflation. Other factors, such as weather, could cause prices of a specific item to go up. However, when the average price of many goods go up, coupled with other factors in the economy such as borrowing costs, it is usually a sign of inflation.</p>
+         <p>To illustrate this, move the tracker below to see the average price of bread over a period of time. Compare this to the Consumer Price Index, or the average price of the Basket of Goods. Do the two data points match? </p>
+    
+      <div id="placeholder"></div>
+       
+      <p>
+        <label for="amount">Average price of bread in:</label>
+        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+      </p>
+             <div id="slider-range-max"></div>
+
+      <p>Think you understand how inflation works? Take a quiz to find out.</p>
+    
+      <div id="main">
+      <div id="header">
+      <h2>Inflation Quiz</h2>
+      </div>
+
+            <form  id="form1" action=" ">
+            <p>How much did the Consumer Price Index go up between 2007 and 2011? </p>
+            <input type="radio" name="question1" value="0" />2.1 per cent<br />
+            <input type="radio" name="question1" value="0" />2.3 per cent<br />
+            <input type="radio" name="question1" value="16.6666667" />2.2 per cent<br />
+            <input type="radio" name="question1" value="0" />4 per cent<br />
+           
+            <p>How much was a loaf of unsliced white bread in 2001? </p>
+            <input type="radio" name="question2" value="16.6666667" />£0.51<br />
+            <input type="radio" name="question2" value="0" />£0.52<br />
+            <input type="radio" name="question2" value="0" />£0.45<br />
+            <input type="radio" name="question2" value="0" />£0.27<br />
+
+
+            <p>How much has the price of avocados gone up in the last five years? </p>
+            <input type="radio" name="question3" value="0" />It hasn't gone up at all.<br />
+            <input type="radio" name="question3" value="16.6666667" />£0.12<br />
+            <input type="radio" name="question3" value="0" />£1.25<br />
+            <input type="radio" name="question3" value="0" />£1.15<br />
+
+            <p>How many pints of lager can you buy for £20 in 2017? </p>
+            <input type="radio" name="question4" value="0" />8 pints<br />
+            <input type="radio" name="question4" value="0" />5.3 pints<br />
+            <input type="radio" name="question4" value="0" />5 pints<br />
+            <input type="radio" name="question4" value="16.6666667" />5.7 pints<br />
+
+            <p> Have the price of eggs increased or decreased since 2008?</p>
+            <input type="radio" name="question5" value="0" />Haven't changed.<br />
+            <input type="radio" name="question5" value="0" />Eggs aren't measured in CPI.<br />
+            <input type="radio" name="question5" value="0" />Increased.<br />
+            <input type="radio" name="question5" value="16.6666667" />Decreased.<br />
+
+
+            <p>If you wanted to buy milk in 1999, how much would it cost?</p>
+            <input type="radio" name="question6" value="16.6666667" />£0.34<br />
+            <input type="radio" name="question6" value="0" />£0.35<br />
+            <input type="radio" name="question6" value="0" />£0.20<br />
+            <input type="radio" name="question6" value="0" />£0.22<br />
+
+            <input type="submit" value="Submit">
+            </form>
+
+      <p>Your grade is: <span id="grade">__</span></p>
+      <p id="grade2"></p>
+      </div>
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+     question1 = parseInt(document.querySelector('input[name = "question1"]:checked').value);
+     question2 = parseInt(document.querySelector('input[name = "question2"]:checked').value);
+     question3 = parseInt(document.querySelector('input[name = "question3"]:checked').value);
+     question4 = parseInt(document.querySelector('input[name = "question4"]:checked').value);
+     question5 = parseInt(document.querySelector('input[name = "question5"]:checked').value);
+     question6 = parseInt(document.querySelector('input[name = "question6"]:checked').value);
+     
+     
+     result = question1 + question2 + question3 + question4 + question5 + question6;
+     
+document.getElementById("grade").innerHTML = result;
+
+    
+return false; 
+} 
+
+</script>
+
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $.plot($("#placeholder"), data, options);
+      });
+      </script>
+
+
+   </body>
+</html>
